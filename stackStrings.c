@@ -105,7 +105,7 @@ void rotr(stack_t **stack, __attribute__((unused))unsigned int lineNumber)
  * Return: Number of characters read, -1 on error or EOF.
  *
  * Reads a line from @stream into @lineptr, up to @n characters.
- * Resizes the buffer if necessary. Stops at newline, EOF, or error.
+ * Resizes the buffer if necessary . Stops at newline, EOF, or error.
  */
 
 int _getline(char **lineptr, size_t *n, FILE *stream)
