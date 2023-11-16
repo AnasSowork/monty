@@ -120,7 +120,7 @@ void findFunc(char *opcode, char *value, int lineNumber, int format)
 }
 
 /**
- * callFun - Calls the appropriate function based on the opcode.
+ * callFun - Calls the appropriate function based on the opcode .
  * @func: The function pointer to the corresponding opcode function.
  * @op: The opcode.
  * @val: The value associated with the opcode.
