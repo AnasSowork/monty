@@ -21,26 +21,26 @@ void openFile(char *fileName)
  */
 void readFile(FILE *fileDescriptor)
 {
-    int lineNumber = 0, format = 0;
-    char *buffer = NULL;
-    size_t length = 0;
-    size_t line_length;
+	int lineNumber = 0, format = 0;
+	char *buffer = NULL;
+	size_t length = 0;
+	size_t line_length;
 
-    while (_getline(&buffer, &length, fileDescriptor) != -1)
-    {
-        lineNumber++;
+	while (_getline(&buffer, &length, fileDescriptor) != -1)
+	{
+		lineNumber++;
 
-        line_length = strlen(buffer);
+		line_length = strlen(buffer);
 
-        if (line_length > 0 && buffer[line_length - 1] == '\n')
-        {
-            buffer[line_length - 1] = '\0';
-        }
+		if (line_length > 0 && buffer[line_length - 1] == '\n')
+		{
+			buffer[line_length - 1] = '\0';
+		}
 
-        format = parseLine(buffer, lineNumber, format);
-    }
+		format = parseLine(buffer, lineNumber, format);
+	}
 
-    free(buffer);
+	free(buffer);
 }
 
 
@@ -124,7 +124,7 @@ void findFunc(char *opcode, char *value, int lineNumber, int format)
  * @func: The function pointer to the corresponding opcode function.
  * @op: The opcode.
  * @val: The value associated with the opcode.
- * @lineNumber: The current line number being processed.
+ * @lineNumber: The current line number being processed .
  * @format: The format indicator for stack or queue mode.
  */
 void callFun(op_func func, char *op, char *val, int lineNumber, int format)
