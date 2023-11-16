@@ -21,27 +21,28 @@ void openFile(char *fileName)
  */
 void readFile(FILE *fileDescriptor)
 {
-	int lineNumber = 0, format = 0;
-	char *buffer = NULL;
-	size_t length = 0;
-	size_t line_length;
+    int lineNumber = 0, format = 0;
+    char *buffer = NULL;
+    size_t length = 0;
+    size_t line_length;
 
-	while (fgets(buffer, length, fileDescriptor) != NULL)
-	{
-		lineNumber++;
+    while (_getline(&buffer, &length, fileDescriptor) != -1)
+    {
+        lineNumber++;
 
-		line_length = strlen(buffer);
+        line_length = strlen(buffer);
 
-		if (line_length > 0 && buffer[line_length - 1] == '\n')
-		{
-			buffer[line_length - 1] = '\0';
-		}
+        if (line_length > 0 && buffer[line_length - 1] == '\n')
+        {
+            buffer[line_length - 1] = '\0';
+        }
 
-		format = parseLine(buffer, lineNumber, format);
-	}
+        format = parseLine(buffer, lineNumber, format);
+    }
 
-	free(buffer);
+    free(buffer);
 }
+
 
 /**
  * parseLine - Parses a line from the Monty bytecode file.

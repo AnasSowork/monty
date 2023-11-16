@@ -80,4 +80,5 @@ void handleMoreErrors(int error_code, ...);
 void handleStringErrors(int error_code, ...);
 void rotr(stack_t **, unsigned int);
 
+int _getline(char **lineptr, size_t *n, FILE *stream);
 #endif
